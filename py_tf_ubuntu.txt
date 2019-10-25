@@ -20,6 +20,27 @@ sudo cp lib64/* /usr/local/cuda/lib64/
 sudo cp include/* /usr/local/cuda/include/
 
 
+[NV Orig]
+https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
+
+https://developer.nvidia.com/cudnn
+
+your CUDA directory path is referred to as /usr/local/cuda/
+your cuDNN download path is referred to as <cudnnpath>
+
+Navigate to your <cudnnpath> directory containing the cuDNN Tar file.
+Unzip the cuDNN package.
+
+$ tar -xzvf cudnn-9.0-linux-x64-v7.tgz
+
+Copy the following files into the CUDA Toolkit directory, and change the file permissions.
+
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+$ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
+
+
 ## Anaconda
 Anaconda is a great package manager for python. I’ve moved to python 3.6, so will be using the Anaconda 3 version:
 
@@ -53,12 +74,9 @@ Tensorflow-GPU uses two software component from Nvidia to access Nvidia GPU. The
 
 -> https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
 
-
+# Painless GPU and tensorflow/PyTorch integration on Ubuntu 18.04
 https://mc.ai/painless-gpu-and-tensorflow-pytorch-integration-on-ubuntu-18-04/
 
+# Tensorflow GPU Installation Made Easy: Use conda instead of pip
 https://towardsdatascience.com/tensorflow-gpu-installation-made-easy-use-conda-instead-of-pip-52e5249374bc
-
->>>
-https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-18-04
-
 

@@ -16,6 +16,9 @@ source activate root
 
 ## Meine Inst-Schritte
 
+>>>
+https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-18-04
+
 # Anaconda Repo
 https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
 # Anaconda 2019.10 for Linux Installer / Python 3.7 version
