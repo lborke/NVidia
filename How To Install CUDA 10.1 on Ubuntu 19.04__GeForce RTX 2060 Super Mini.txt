@@ -1,0 +1,146 @@
+
+###
+GeForce RTX 2060 Super Mini
+https://www.techpowerup.com/gpu-specs/geforce-rtx-2060-super.c3441
+
+
+How To Install CUDA 10.1 on Ubuntu 19.04
+https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-1-on-Ubuntu-19-04-1405
+
+So far I have installed CUDA 10.1,
+docker 18.09.4 and NVIDIA-docker 2.03
+and run TensorFlow 2 alpha with GPU support.
+They are all working fine. In this post I'll just go over how to get CUDA 10.1 running on Ubuntu 19.04.
+Fortunately it was straight forward do get it working.
+
+
+## NVidia Treiber unter Ubuntu installieren
+
+Step 1) Get Ubuntu 19.04 installed!
+
+Step 2) Get the NVIDIA driver installed 
+
+# I recommend using the most recent driver. The simplest way to install the driver is from the "graphics-drivers ppa".
+sudo add-apt-repository ppa:graphics-drivers/ppa
+
+# Install dependencies for the system to build the kernel modules,
+sudo apt-get install dkms build-essential
+
+# Then install the driver, (418 was the most recent at the time of this writing. If you do the command below and hit tab after typing nvidia-driver-
+# you should see a list of all the available driver versions in the ppa.)
+sudo apt-get update
+# sudo apt-get install nvidia-driver-418
+# zuletzt versucht
+sudo apt-get install nvidia-driver-430
+
+# After the driver install go ahead and reboot.
+sudo shutdown -r Now
+
+
+Step 3) Install CUDA "dependencies" 
+
+# There are a few dependencies that get installed when you run the full CUDA deb file but, since we are not going to use the deb file,
+# you will want to install them separately. It's simple since we can get what's needed with just four package installs
+sudo apt-get install freeglut3 freeglut3-dev libxi-dev libxmu-dev
+
+
+Step 4) Get the CUDA "run" file installer
+Step 5) Run the "runfile" to install the CUDA toolkit and samples
+
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=runfilelocal
+
+wget http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
+sudo sh cuda_10.1.243_418.87.00_linux.run
+
+We will not install the included display driver since the latest driver was installed in step 2)
+This will do the "right thing". It will,
+    install the CUDA toolkit in /usr/local/cuda-10.1
+    create a symbolic link to /usr/local/cuda
+    install the samples in /usr/local/cuda/samples and in your home directory under NVIDIA_CUDA-10.1_Samples
+    add the appropriate library path
+
+cat /etc/ld.so.conf.d/cuda-10-1.conf
+>> /usr/local/cuda-10.1/targets/x86_64-linux/lib
+
+
+Step 6) Setup your environment variables
+
+To configure the CUDA environment for all users (and applications) on your system create the file (use sudo and a text editor of your choice)
+# sudo nano cuda.sh ; sudo gedit cuda.sh
+
+/etc/profile.d/cuda.sh
+
+with the following content:
+export PATH=$PATH:/usr/local/cuda/bin
+export CUDADIR=/usr/local/cuda
+
+The next time you login your shells will start with CUDA on your path and be ready to use. If you want to load that environment in a shell right now without logging out then just do:
+source /etc/profile.d/cuda.sh
+
+[optional, wurde gemacht]
+Note on LIBRARY PATH:
+Move the installed conf file out of the way:
+sudo mv /etc/ld.so.conf.d/cuda-10-1.conf  /etc/ld.so.conf.d/cuda-10-1.conf-orig
+
+Then create, (using sudo and your editor of choice), the file
+# sudo gedit cuda.conf
+
+/etc/ld.so.conf.d/cuda.conf
+containing:
+/usr/local/cuda/lib64
+
+Then run:
+sudo ldconfig
+
+
+Step 7) Test CUDA by building the "samples" 
+
+Let's make sure everything is working correctly. You can use the copy of the samples that the installer put in you home directory under `NVIDIA_CUDA-10.1_Samples` or copy the samples from `/usr/local/cuda/samples`.
+
+cd  ~/NVIDIA_CUDA-10.1_Samples
+
+: source cuda-10.1-env
+
+make -j4
+
+danach werden etliche Exe's kompiliert (via nvcc): in ~/NVIDIA_CUDA-10.1_Samples/bin/x86_64/linux/release
+
+
+>>>
+siehe
+file:///D:\PowerTools\NVidia\Nvidia_Checks.txt
+
+
+### Step Outputs
+
+Step 5)
+===========
+= Summary =
+===========
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-10.1/
+Samples:  Installed in /home/lukas/
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-10.1/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-10.1/lib64, or, add /usr/local/cuda-10.1/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.1/bin
+
+Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.1/doc/pdf for detailed information on setting up CUDA.
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 418.00 is required for CUDA 10.1 functionality to work.
+To install the driver using this installer, run the following command, replacing <CudaInstaller> with the name of this run file:
+    sudo <CudaInstaller>.run --silent --driver
+
+Logfile is /var/log/cuda-installer.log
+
+
+
+### Mix / Versuche
+
+# Die folgenden Pakete haben unerfüllte Abhängigkeiten:
+# nvidia-settings : Hängt ab von: screen-resolution-extra (>= 0.18~) soll aber nicht installiert werden
+: sudo apt install nvidia-settings
+
+

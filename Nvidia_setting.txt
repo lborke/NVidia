@@ -1,0 +1,41 @@
+
+# install
+von NVidia-Seite runterladen
+"make x"
+sudo sh ./NV*
+
+
+#
+apt-cache search nvidia | grep -P '^nvidia-[0-9]+\s'
+
+nvidia-settings
+
+lspci | grep -i nvidia
+
+
+##
+
+nvidia-smi
+
+uname -r
+
+lsb_release -a
+
+gcc --version
+
+nvcc --version
+
+
+##
+https://askubuntu.com/questions/1056363/how-to-disable-gui-on-boot-in-18-04-bionic-beaver
+
+To disable GUI on boot, run:
+sudo systemctl set-default multi-user.target
+
+To enable GUI again issue the command:
+sudo systemctl set-default graphical.target
+
+To start Gnome session on a system without a current GUI just execute:
+sudo systemctl start gdm3.service
+
+

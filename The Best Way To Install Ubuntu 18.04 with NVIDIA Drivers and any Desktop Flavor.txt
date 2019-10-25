@@ -1,0 +1,5 @@
+
+: zu checken
+The Best Way To Install Ubuntu 18.04 with NVIDIA Drivers and any Desktop Flavor
+https://www.pugetsystems.com/labs/hpc/The-Best-Way-To-Install-Ubuntu-18-04-with-NVIDIA-Drivers-and-any-Desktop-Flavor-1178/
+

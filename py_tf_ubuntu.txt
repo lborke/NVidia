@@ -1,0 +1,129 @@
+
+# The $1700 great Deep Learning box: Assembly, setup and benchmarks
+https://blog.slavv.com/the-1700-great-deep-learning-box-assembly-setup-and-benchmarks-148c5ebe6415
+
+## Getting up to date
+
+sudo apt-get update
+sudo apt-get --assume-yes upgrade
+sudo apt-get --assume-yes install tmux build-essential gcc g++ make binutils
+sudo apt-get --assume-yes install software-properties-common
+sudo apt-get --assume-yes install git
+
+
+## CuDNN
+Since version 1.5 Tensorflow supports CuDNN 7, so we install that. To download CuDNN, one needs to register for a (free) developer account. After downloading, install with the following:
+
+tar -xzf cudnn-9.0-linux-x64-v7.2.tgz
+cd cuda
+sudo cp lib64/* /usr/local/cuda/lib64/
+sudo cp include/* /usr/local/cuda/include/
+
+
+## Anaconda
+Anaconda is a great package manager for python. I’ve moved to python 3.6, so will be using the Anaconda 3 version:
+
+wget https://repo.continuum.io/archive/Anaconda3-4.3.1-Linux-x86_64.sh -O “anaconda-install.sh”
+bash anaconda-install.sh -b
+cat >> ~/.bashrc << 'EOF'
+export PATH=$HOME/anaconda3/bin:${PATH}
+EOF
+source .bashrc
+conda upgrade -y --all
+source activate root
+
+
+## Tensorflow
+The popular DL framework by Google. Installation:
+
+sudo apt install python3-pip
+pip install tensorflow-gpu
+
+
+# Validate Tensorfow install: To make sure we have our stack running smoothly, I like to run the tensorflow MNIST example:
+
+git clone https://github.com/tensorflow/tensorflow.git
+python tensorflow/tensorflow/examples/tutorials/mnist/fully_connected_feed.py
+
+
+## Keras
+Keras is a great high-level neural networks framework, an absolute pleasure to work with. Installation can’t be easier too:
+
+pip install keras
+
+
+
+
+### mehr Links
+# Install Tensorflow-GPU to use Nvidia GPU using anaconda on Ubuntu 18.04 / 19.04 do AI!
+https://medium.com/datadriveninvestor/install-tensorflow-gpu-to-use-nvidia-gpu-on-ubuntu-18-04-do-ai-71b0ce64ebc5
+Tensorflow-GPU uses two software component from Nvidia to access Nvidia GPU. They are CUDA toolkit and cuDNN. If your GPU supports CUDA, then we shall be able to use it to do GPU accelerated tensorflow.
+
+-> https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
+
+
+https://mc.ai/painless-gpu-and-tensorflow-pytorch-integration-on-ubuntu-18-04/
+
+https://towardsdatascience.com/tensorflow-gpu-installation-made-easy-use-conda-instead-of-pip-52e5249374bc
+
+>>>
+https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-18-04
+
+
+# Anaconda Repo
+https://repo.anaconda.com/archive/Anaconda3-2019.03-Linux-x86_64.sh
+# Anaconda 2019.10 for Linux Installer / Python 3.7 version
+https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+
+
+# install
+[_ extra]
+sudo apt install curl
+
+cd /tmp
+curl -O https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+
+[opt]
+sha256sum Anaconda3-2019.10-Linux-x86_64.sh
+: 45c851b7497cc14d5ca060064394569f724b67d9b5f98a926ed49b834a6bb73a
+
+bash Anaconda3-2019.10-Linux-x86_64.sh
+
+source ~/.bashrc
+
+# use/config
+conda info
+
+conda list
+
+Setting Up Anaconda Environments
+conda search "^python$"
+
+conda create --name my_env python=3
+
+conda create --name tfgpu python=3
+
+:or
+conda create -n tfgpu python=3.6
+
+
+conda activate my_env
+
+conda activate tfgpu
+
+conda deactivate
+
+conda info --envs
+
+# conda docs
+https://conda.readthedocs.io/en/latest/
+
+
+# to check
+conda install tensorflow-gpu==1.12 cudatoolkit==9.0 cudnn 7.1.2 h5py
+
+
+# TF
+conda install tensorflow-gpu
+
+
