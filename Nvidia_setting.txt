@@ -25,6 +25,10 @@ gcc --version
 
 nvcc --version
 
+cat /usr/local/cuda/version.txt
+
+cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
+
 
 ##
 https://askubuntu.com/questions/1056363/how-to-disable-gui-on-boot-in-18-04-bionic-beaver

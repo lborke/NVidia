@@ -45,11 +45,101 @@ hello = tf.constant('Hello, TensorFlow!')
 import tensorflow as tf
 print('tf version = ', tf.__version__)
 
+tf.test.is_gpu_available(cuda_only=False, min_cuda_compute_capability=None)
+
+
+# python script
+
+import tensorflow as tf
+
+print('tf version = ', tf.__version__)
+tf.test.is_built_with_cuda()
+
+
+tf.test.is_gpu_available()
+
+tf.test.gpu_device_name()
+
+
 with tf.device('/gpu:0'):
 	a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
 	b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
 	c = tf.matmul(a, b)
 
 
-tf.test.is_gpu_available()
+with tf.device('/gpu:0'):
+	a = tf.constant([355.0, 4826.0, 37476.0, 487346.0, 3495.0, 5556.0], shape=[2, 3], name='a')
+	b = tf.constant([46661.0, 2864754.0, 75762873.0, 7486584.0, 544155.0, 645746.0], shape=[3, 2], name='b')
+	c = tf.matmul(a, b)
+
+
+#
+from tensorflow.python.client import device_lib
+
+device_lib.list_local_devices()
+
+
+# verbose output
+successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+
+https://stackoverflow.com/questions/36838770/how-to-interpret-tensorflow-output
+
+
+##
+import tensorflow as tf
+
+import tensorflow
+
+from tensorflow import keras
+
+keras == tf.keras
+
+
+# läuft!
+
+import tensorflow as tf
+
+from tensorflow.keras.layers import Dense,GlobalAveragePooling2D
+from tensorflow.keras.applications import MobileNet
+from tensorflow.keras.applications.mobilenet import preprocess_input
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.models import Model, model_from_yaml
+from tensorflow.keras.optimizers import Adam
+
+
+base_model=MobileNet(weights='imagenet',include_top=False) #imports the mobilenet model and discards the last 1000 neuron layer.
+
+
+x=base_model.output
+x=GlobalAveragePooling2D()(x)
+x=Dense(1024,activation='relu')(x) #we add dense layers so that the model can learn more complex functions and classify for better results.
+x=Dense(1024,activation='relu')(x) #dense layer 2
+x=Dense(512,activation='relu')(x) #dense layer 3
+preds=Dense(3,activation='softmax')(x) #final layer with softmax activation
+
+model=Model(inputs=base_model.input,outputs=preds)
+
+# Print a summary representation of your model
+model.summary()
+
+
+for layer in model.layers[:87]:
+	layer.trainable=False
+
+
+for layer in model.layers[87:]:
+	layer.trainable=True
+
+
+train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input) #included in our dependencies
+
+
+
+
+
+
+
+
+
+
 

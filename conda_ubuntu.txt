@@ -54,10 +54,14 @@ conda create --name tfgpu python=3
 conda create --name my_env python=3
 conda create -n tfgpu python=3.6
 
+conda create -n cudnn python=3.6
+
 
 conda activate my_env
 
 conda activate tfgpu
+
+conda activate cudnn
 
 conda deactivate
 
