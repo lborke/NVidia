@@ -50,6 +50,8 @@ conda search "^python$"
 
 conda create --name tfgpu python=3
 
+conda create --name tfgpu1.14 python=3
+
 :or
 conda create --name my_env python=3
 conda create -n tfgpu python=3.6
@@ -60,6 +62,8 @@ conda create -n cudnn python=3.6
 conda activate my_env
 
 conda activate tfgpu
+
+conda activate tfgpu1.14
 
 conda activate cudnn
 
@@ -77,5 +81,20 @@ conda install tensorflow-gpu
 
 # to check
 : conda install tensorflow-gpu==1.12 cudatoolkit==9.0 cudnn 7.1.2 h5py
+
+
+conda install pillow
+
+
+conda install tensorflow-gpu==1.14
+
+
+pip install tensorflow-gpu
+
+
+
+
+
+
 
 

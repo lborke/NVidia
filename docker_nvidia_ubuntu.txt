@@ -1,0 +1,90 @@
+
+###
+
+[extra]
+sudo apt --fix-broken install
+
+sudo apt autoremove
+
+
+# >>>
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+
+sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+
+# test
+
+sudo docker run hello-world
+
+
+# NVIDIA Container Toolkit
+https://www.tensorflow.org/install/docker
+https://github.com/NVIDIA/nvidia-docker/blob/master/README.md#quickstart
+https://github.com/NVIDIA/nvidia-docker/issues/971
+
+
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+$ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+$ sudo systemctl restart docker
+
+
+# >>> angepasst für 19.04
+distribution="ubuntu18.04"
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+sudo apt-get update
+
+# Install nvidia-docker2 and reload the Docker daemon configuration
+sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+
+
+
+! läuft
+#### Test nvidia-smi with the latest official CUDA image
+sudo docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+sudo docker run --gpus all nvidia/cuda nvidia-smi
+
+sudo docker run --gpus all -it tensorflow/tensorflow:latest-gpu bash
+
+sudo docker run --gpus all -it tensorflow/tensorflow:latest-gpu-py3 bash
+
+# data
+sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:latest-gpu bash
+
+
+sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:latest-gpu-py3 bash
+
+
+
+# py in Docker
+pip install pillow
+pip install scipy
