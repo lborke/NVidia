@@ -1,5 +1,5 @@
 
-#### The $1700 great Deep Learning box: Assembly, setup and benchmarks
+### The $1700 great Deep Learning box: Assembly, setup and benchmarks
 https://blog.slavv.com/the-1700-great-deep-learning-box-assembly-setup-and-benchmarks-148c5ebe6415
 
 Schritte aus dem Link zuvor

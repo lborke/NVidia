@@ -1,7 +1,6 @@
 
-###
-
 ## mehr Install Links
+
 # Install Tensorflow-GPU to use Nvidia GPU using anaconda on Ubuntu 18.04 / 19.04 do AI!
 https://medium.com/datadriveninvestor/install-tensorflow-gpu-to-use-nvidia-gpu-on-ubuntu-18-04-do-ai-71b0ce64ebc5
 Tensorflow-GPU uses two software component from Nvidia to access Nvidia GPU. They are CUDA toolkit and cuDNN. If your GPU supports CUDA, then we shall be able to use it to do GPU accelerated tensorflow.
@@ -16,7 +15,7 @@ https://towardsdatascience.com/tensorflow-gpu-installation-made-easy-use-conda-i
 
 
 
-# offizielle und aktuelle Treiber
+## offizielle und aktuelle Treiber
 https://www.nvidia.de/Download/driverResults.aspx/151575/de
 Version: 	430.50
 Freigabedatum: 	2019.9.11
@@ -25,6 +24,10 @@ Sprache: 	Deutsch
 Dateigröße: 	105.42 MB 
 
 
+## CUDA + cuDNN
+
+https://developer.nvidia.com/cuda-gpus
+
 # NVIDIA CUDA Installation Guide for Linux
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions
 
@@ -32,25 +35,4 @@ https://developer.nvidia.com/cudnn
 cuDNN is supported on Windows, Linux and MacOS systems with Volta, Pascal, Kepler, Maxwell Tegra K1, Tegra X1 and Tegra X2 and Jetson Xavier GPUs
 Deep learning frameworks using cuDNN 7.6, can leverage new features and performance of the Volta and Turing architectures to deliver faster training performance
 
-
-https://developer.nvidia.com/cuda-gpus
-
-
-# TF requirements
-https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781786469786/2/ch02lvl1sec18/requirements-for-running-tensorflow-with-gpu-from-nvidia
-The GPU-enabled version of TensorFlow has several requirements such as 64-bit Linux, Python 2.7 (or 3.3+ for Python 3),
-NVIDIA CUDA 7.5 (CUDA 8.0 required for Pascal GPUs) and NVIDIA, cuDNN v4.0 (minimum) or v5.1 (recommended).
-More specifically, the current development of TensorFlow supports only GPU computing using NVIDIA toolkits and software.
-Now the following software must be installed on your machine.
-
-https://www.tensorflow.org/install/gpu
-The following NVIDIA® software must be installed on your system:
-NVIDIA® GPU drivers —CUDA 10.0 requires 410.x or higher.
-CUDA® Toolkit —TensorFlow supports CUDA 10.0 (TensorFlow >= 1.13.0)
-CUPTI ships with the CUDA Toolkit.
-cuDNN SDK (>= 7.4.1)
-
-
-# TF Docker
-https://www.tensorflow.org/install/docker
 

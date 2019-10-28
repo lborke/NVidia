@@ -1,4 +1,25 @@
 
+# TF requirements
+
+https://subscription.packtpub.com/book/big_data_and_business_intelligence/9781786469786/2/ch02lvl1sec18/requirements-for-running-tensorflow-with-gpu-from-nvidia
+The GPU-enabled version of TensorFlow has several requirements such as 64-bit Linux, Python 2.7 (or 3.3+ for Python 3),
+NVIDIA CUDA 7.5 (CUDA 8.0 required for Pascal GPUs) and NVIDIA, cuDNN v4.0 (minimum) or v5.1 (recommended).
+More specifically, the current development of TensorFlow supports only GPU computing using NVIDIA toolkits and software.
+Now the following software must be installed on your machine.
+
+https://www.tensorflow.org/install/gpu
+The following NVIDIA® software must be installed on your system:
+NVIDIA® GPU drivers —CUDA 10.0 requires 410.x or higher.
+CUDA® Toolkit —TensorFlow supports CUDA 10.0 (TensorFlow >= 1.13.0)
+CUPTI ships with the CUDA Toolkit.
+cuDNN SDK (>= 7.4.1)
+
+
+# TF Docker
+https://www.tensorflow.org/install/docker
+
+
+
 # Testing your Tensorflow Installation
 
 conda activate tfgpu
