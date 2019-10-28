@@ -4,7 +4,15 @@
 # conda activate tfgpu1.14
 
 
-# läuft!
+# tests
+import tensorflow as tf
+
+import tensorflow
+
+from tensorflow import keras
+
+
+# >>> läuft!
 
 import tensorflow as tf
 

@@ -1,6 +1,21 @@
 
 ###
 
+## mehr Install Links
+# Install Tensorflow-GPU to use Nvidia GPU using anaconda on Ubuntu 18.04 / 19.04 do AI!
+https://medium.com/datadriveninvestor/install-tensorflow-gpu-to-use-nvidia-gpu-on-ubuntu-18-04-do-ai-71b0ce64ebc5
+Tensorflow-GPU uses two software component from Nvidia to access Nvidia GPU. They are CUDA toolkit and cuDNN. If your GPU supports CUDA, then we shall be able to use it to do GPU accelerated tensorflow.
+
+-> https://github.com/fastai/courses/blob/master/setup/install-gpu.sh
+
+# Painless GPU and tensorflow/PyTorch integration on Ubuntu 18.04
+https://mc.ai/painless-gpu-and-tensorflow-pytorch-integration-on-ubuntu-18-04/
+
+# Tensorflow GPU Installation Made Easy: Use conda instead of pip
+https://towardsdatascience.com/tensorflow-gpu-installation-made-easy-use-conda-instead-of-pip-52e5249374bc
+
+
+
 # offizielle und aktuelle Treiber
 https://www.nvidia.de/Download/driverResults.aspx/151575/de
 Version: 	430.50

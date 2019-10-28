@@ -102,13 +102,3 @@ successful NUMA node read from SysFS had negative value (-1), but there must be 
 
 https://stackoverflow.com/questions/36838770/how-to-interpret-tensorflow-output
 
-
-##
-import tensorflow as tf
-
-import tensorflow
-
-from tensorflow import keras
-
-keras == tf.keras
-
