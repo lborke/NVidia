@@ -1,7 +1,7 @@
 
-conda activate tfgpu
+# conda activate tfgpu
 
-conda activate tfgpu1.14
+# conda activate tfgpu1.14
 
 
 # läuft!

@@ -1,0 +1,7 @@
+
+###
+
+[extra]
+sudo apt --fix-broken install
+
+sudo apt autoremove

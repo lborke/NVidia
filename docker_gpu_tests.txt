@@ -1,0 +1,22 @@
+
+#### Test nvidia-smi with the latest official CUDA image
+sudo docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+sudo docker run --gpus all nvidia/cuda nvidia-smi
+
+sudo docker run --gpus all -it tensorflow/tensorflow:latest-gpu bash
+
+sudo docker run --gpus all -it tensorflow/tensorflow:latest-gpu-py3 bash
+
+# data
+sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:latest-gpu bash
+
+
+sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:latest-gpu-py3 bash
+
+
+
+# py in Docker
+pip install pillow
+pip install scipy
+
