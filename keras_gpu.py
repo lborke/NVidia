@@ -58,7 +58,7 @@ train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input) #inclu
 
 
 # local path: BigSetFull
-training_data_path = '/media/lukas/TeraTest/temp/alltours/BigSetFull'
+# training_data_path = '/media/lukas/TeraTest/temp/alltours/BigSetFull'
 
 training_data_path = '/data'
 

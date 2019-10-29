@@ -5,3 +5,8 @@
 sudo apt --fix-broken install
 
 sudo apt autoremove
+
+
+#
+https://askubuntu.com/questions/432836/how-can-i-check-disk-space-used-in-a-partition-using-the-terminal-in-ubuntu-12-0
+
