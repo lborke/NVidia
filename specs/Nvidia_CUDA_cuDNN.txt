@@ -1,0 +1,15 @@
+
+https://github.com/NVIDIA/nvidia-docker
+
+## AWS AMIs mit GPU/Nvidia/Caffe2
+Caffe2 Nvidia GPU Production
+https://aws.amazon.com/marketplace/pp/B0792XFLQ5?qid=1532937832599
+
+Deep Learning AMI (Ubuntu) Ubuntu 16.04
+Caffe2 0.8.1; Deep Learning frameworks (with CUDA 8.0, 9.0, 9.1, 9.2 and cuDNN 7.1.4):
+https://aws.amazon.com/marketplace/pp/B077GCH38C
+
+
+# Detectron
+Detectron has been tested extensively with CUDA 8.0 and cuDNN 6.0.21.
+

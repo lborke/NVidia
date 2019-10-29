@@ -1,4 +1,9 @@
 
+https://github.com/NVIDIA/nvidia-docker
+Make sure you have installed the NVIDIA driver and Docker 19.03 for your Linux distribution
+!!! Note that with the release of Docker 19.03, usage of nvidia-docker2 packages are deprecated since NVIDIA GPUs are now natively supported
+as devices in the Docker runtime.
+
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 ## >>> docker install
@@ -58,4 +63,12 @@ sudo systemctl restart docker
 # docker NVIDIA test
 
 sudo docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+
+
+## NVIDIA Containers
+
+https://hub.docker.com/r/nvidia/cuda/
+The NVIDIA Container Runtime for Docker is required to run CUDA images.
+For CUDA 10.0, nvida-docker2 or greater is required. Older versions of the NVIDIA runtime work but an un-supported.
+
 

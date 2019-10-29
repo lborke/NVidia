@@ -13,6 +13,12 @@ https://mc.ai/painless-gpu-and-tensorflow-pytorch-integration-on-ubuntu-18-04/
 # Tensorflow GPU Installation Made Easy: Use conda instead of pip
 https://towardsdatascience.com/tensorflow-gpu-installation-made-easy-use-conda-instead-of-pip-52e5249374bc
 
+How To Install Docker and NVIDIA-Docker on Ubuntu 19.04
+https://www.pugetsystems.com/labs/hpc/How-To-Install-Docker-and-NVIDIA-Docker-on-Ubuntu-19-04-1460/
+
+NVIDIA Docker2 with OpenGL and X Display Output
+https://www.pugetsystems.com/labs/hpc/NVIDIA-Docker2-with-OpenGL-and-X-Display-Output-1527/
+
 
 
 ## offizielle und aktuelle Treiber
@@ -24,15 +30,17 @@ Sprache: 	Deutsch
 Dateigröße: 	105.42 MB 
 
 
-## CUDA + cuDNN
 
-https://developer.nvidia.com/cuda-gpus
+# NVidia GPU Cloud
+https://ngc.nvidia.com/catalog/landing
+https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow
 
-# NVIDIA CUDA Installation Guide for Linux
-https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions
 
-https://developer.nvidia.com/cudnn
-cuDNN is supported on Windows, Linux and MacOS systems with Volta, Pascal, Kepler, Maxwell Tegra K1, Tegra X1 and Tegra X2 and Jetson Xavier GPUs
-Deep learning frameworks using cuDNN 7.6, can leverage new features and performance of the Volta and Turing architectures to deliver faster training performance
+# Einfache Einrichtung von Docker mit Nvidia GPU-Unterstützung durch Ansible
+https://www.datadrivers.de/2018/09/03/docker/
+
+
+# Picking a GPU for Deep Learning
+https://blog.slavv.com/picking-a-gpu-for-deep-learning-3d4795c273b9
 
 

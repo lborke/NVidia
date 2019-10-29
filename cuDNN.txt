@@ -1,4 +1,9 @@
 
+cuDNN is supported on Windows, Linux and MacOS systems with Volta, Pascal, Kepler, Maxwell Tegra K1, Tegra X1 and Tegra X2 and Jetson Xavier GPUs
+Deep learning frameworks using cuDNN 7.6, can leverage new features and performance of the Volta and Turing architectures to deliver faster training
+performance
+
+
 
 # >>> [NV Orig]
 https://developer.nvidia.com/cudnn

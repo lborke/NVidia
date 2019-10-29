@@ -45,3 +45,11 @@ Keras is a great high-level neural networks framework, an absolute pleasure to w
 pip install keras
 
 
+## Removing CUDA/Nvidia drivers
+
+If at any point the drivers or CUDA seem broken (as they did for me — multiple times), it might be better to start over by running:
+
+sudo apt-get remove --purge nvidia*
+sudo apt-get autoremove
+sudo reboot
+

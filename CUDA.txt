@@ -1,0 +1,9 @@
+
+https://developer.nvidia.com/cuda-gpus
+
+https://developer.nvidia.com/cuda-downloads
+
+# NVIDIA CUDA Installation Guide for Linux
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions
+https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation
+
