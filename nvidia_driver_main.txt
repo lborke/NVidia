@@ -1,0 +1,31 @@
+
+## vorbereitung
+
+sudo apt update
+sudo apt upgrade
+
+
+## pugetsystems
+
+sudo add-apt-repository ppa:graphics-drivers/ppa
+
+sudo apt-get install dkms build-essential
+
+sudo apt-get update
+
+[sudo apt-get install nvidia-driver-]
+sudo apt-get install nvidia-driver-430
+
+sudo reboot
+
+
+?: sudo apt-mark hold nvidia-driver-390
+
+
+## Removing CUDA/Nvidia drivers
+If at any point the drivers or CUDA seem broken (as they did for me — multiple times), it might be better to start over by running:
+
+sudo apt-get remove --purge nvidia*
+sudo apt-get autoremove
+sudo reboot
+
