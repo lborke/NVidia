@@ -1,5 +1,4 @@
 
-https://github.com/NVIDIA/nvidia-docker
 
 ## AWS AMIs mit GPU/Nvidia/Caffe2
 Caffe2 Nvidia GPU Production
