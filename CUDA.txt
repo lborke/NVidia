@@ -7,3 +7,30 @@ https://developer.nvidia.com/cuda-downloads
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions
 https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#package-manager-installation
 
+
+# Install TensorFlow Docker on Ubuntu 18.04 with GPU support
+https://medium.com/@madmenhitbooker/install-tensorflow-docker-on-ubuntu-18-04-with-gpu-support-ed58046a2a56
+
+
+# Up and Running with Ubuntu, Nvidia, Cuda, CuDNN, TensorFlow, and Pytorch
+https://hackernoon.com/up-and-running-with-ubuntu-nvidia-cuda-cudnn-tensorflow-and-pytorch-a54ec2ec907d
+
+sudo apt update
+sudo apt upgrade
+
+sudo add-apt-repository ppa:graphics-drivers/ppa
+
+sudo apt install nvidia-driver-390
+: sudo apt install nvidia-driver-XXX
+
+sudo apt-mark hold nvidia-driver-390
+
+
+
+# Set up a TensorFlow GPU Docker container using the Lambda Stack Dockerfile
+https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile/
+
+
+https://github.com/tensorflow/tensorflow/issues/27715
+
+
