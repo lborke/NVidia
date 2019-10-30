@@ -31,3 +31,6 @@ sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull
 pip install pillow
 pip install scipy
 
+
+# How to use Tensorflow-gpu with Docker: run / commit / start / stop
+https://medium.com/@RouYunPan/how-to-use-tensorflow-gpu-with-docker-2b72f784fdf3

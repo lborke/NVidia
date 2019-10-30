@@ -16,3 +16,5 @@ df -Th
 
 lsblk
 
+swapon --show
+

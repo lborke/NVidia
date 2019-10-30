@@ -1,0 +1,20 @@
+
+https://github.com/cemizm/tf-benchmark-gpu
+
+https://hewlettpackard.github.io/dlcookbook-dlbs/#/
+
+
+
+# Is Docker Ideal for Running TensorFlow GPU? Let’s measure using the RTX 2080 Ti
+https://blog.exxactcorp.com/is-docker-ideal-for-running-tensorflow-lets-measure-performance-with-rtx-2080-ti/
+
+python tf_cnn_benchmarks.py --num_gpus=1 --batch_size=64 --model=resnet50 --variable_update=parameter_server
+python tf_cnn_benchmarks.py --num_gpus=1 --batch_size=32 --model=vgg16 --variable_update=parameter_server
+
+
+https://github.com/tensorflow/benchmarks
+
+
+# >>> Using NVIDIA GPU within Docker Containers : Benchmarking Between GPU and CPU
+https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
+
