@@ -5,9 +5,10 @@
 # python tf_benchmark_simple.py cpu 1000
 # python tf_benchmark_simple.py cpu 10000
 
+# python tf_benchmark_simple.py gpu 10000
+
 
 import sys
-# import numpy as np
 import tensorflow as tf
 from datetime import datetime
 

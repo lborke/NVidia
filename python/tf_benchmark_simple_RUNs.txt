@@ -1,0 +1,26 @@
+
+# py runs
+python tf_benchmark_simple.py gpu 10000
+Time taken: 0:00:01.196744
+
+python tf_benchmark_simple.py cpu 10000
+Time taken: 0:00:06.582269
+
+#
+python tf_benchmark_simple.py gpu 20000
+Time taken: 0:00:04.077426
+Time taken: 0:00:04.115060
+Time taken: 0:00:04.041975
+
+python tf_benchmark_simple.py cpu 20000
+Time taken: 0:00:49.920662
+Time taken: 0:00:50.064548
+Time taken: 0:00:50.021178
+
+#
+python tf_benchmark_simple.py gpu 30000
+Time taken: 0:00:12.170086
+
+python tf_benchmark_simple.py cpu 30000
+Time taken: 0:02:47.143445
+
