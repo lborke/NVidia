@@ -18,12 +18,20 @@ python tf_benchmark_simple.py gpu 20000
 Time taken: 0:00:09.934587
 Time taken: 0:00:06.216401
 Time taken: 0:00:06.230362
+[nach Reboot]
+Time taken: 0:00:09.568884
 
 # paperspace P5000
 python tf_benchmark_simple.py gpu 20000
 Time taken: 0:00:07.878236
 Time taken: 0:00:07.868149
 Time taken: 0:00:07.814736
+
+# paperspace P6000
+python tf_benchmark_simple.py gpu 20000
+Time taken: 0:00:06.044434
+Time taken: 0:00:06.100982
+Time taken: 0:00:06.046441
 
 
 # Ryzen CPU
@@ -49,17 +57,38 @@ Time taken: 0:00:43.553487
 python tf_benchmark_simple.py gpu 30000
 Time taken: 0:00:12.170086
 
+# paperspace P4000
+python tf_benchmark_simple.py gpu 30000
+Time taken: 0:00:17.609132
+Time taken: 0:00:17.552304
+Time taken: 0:00:17.540123
+
 # paperspace P5000
 python tf_benchmark_simple.py gpu 30000
 Time taken: 0:00:23.320332
 Time taken: 0:00:23.279803
 Time taken: 0:00:23.395270
 
+# paperspace P6000
+python tf_benchmark_simple.py gpu 30000
+Time taken: 0:00:16.158351
+Time taken: 0:00:16.217839
+Time taken: 0:00:16.179006
+
 
 # Ryzen CPU
 python tf_benchmark_simple.py cpu 30000
 Time taken: 0:02:47.143445
 
+# paperspace P4000/CPU
+python tf_benchmark_simple.py cpu 30000
+Time taken: 0:01:57.945483
+
 # paperspace P5000/CPU
 python tf_benchmark_simple.py cpu 30000
 Time taken: 0:02:25.100542
+
+# paperspace P6000/CPU
+python tf_benchmark_simple.py cpu 30000
+Time taken: 0:01:59.661130
+
