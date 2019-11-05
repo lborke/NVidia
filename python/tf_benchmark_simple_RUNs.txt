@@ -6,21 +6,60 @@ Time taken: 0:00:01.196744
 python tf_benchmark_simple.py cpu 10000
 Time taken: 0:00:06.582269
 
-#
+### 20000
+# GeForce RTX 2060 Super Mini
 python tf_benchmark_simple.py gpu 20000
 Time taken: 0:00:04.077426
 Time taken: 0:00:04.115060
 Time taken: 0:00:04.041975
 
+# paperspace P4000
+python tf_benchmark_simple.py gpu 20000
+Time taken: 0:00:09.934587
+Time taken: 0:00:06.216401
+Time taken: 0:00:06.230362
+
+# paperspace P5000
+python tf_benchmark_simple.py gpu 20000
+Time taken: 0:00:07.878236
+Time taken: 0:00:07.868149
+Time taken: 0:00:07.814736
+
+
+# Ryzen CPU
 python tf_benchmark_simple.py cpu 20000
 Time taken: 0:00:49.920662
 Time taken: 0:00:50.064548
 Time taken: 0:00:50.021178
 
-#
+# paperspace P4000/CPU
+python tf_benchmark_simple.py cpu 20000
+Time taken: 0:00:33.748403
+Time taken: 0:00:32.941050
+Time taken: 0:00:34.043207
+
+# paperspace P5000/CPU
+python tf_benchmark_simple.py cpu 20000
+Time taken: 0:00:45.775080
+Time taken: 0:00:43.553487
+
+
+### 30000
+# GeForce RTX 2060 Super Mini
 python tf_benchmark_simple.py gpu 30000
 Time taken: 0:00:12.170086
 
+# paperspace P5000
+python tf_benchmark_simple.py gpu 30000
+Time taken: 0:00:23.320332
+Time taken: 0:00:23.279803
+Time taken: 0:00:23.395270
+
+
+# Ryzen CPU
 python tf_benchmark_simple.py cpu 30000
 Time taken: 0:02:47.143445
 
+# paperspace P5000/CPU
+python tf_benchmark_simple.py cpu 30000
+Time taken: 0:02:25.100542

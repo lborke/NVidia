@@ -29,6 +29,9 @@ sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull
 # benchmarks
 sudo docker run --gpus all --rm -it -v /home/lukas/benchmark:/app tensorflow/tensorflow:1.14.0-gpu-py3 bash
 
+# paperspace
+sudo docker run --gpus all --rm -it -v ~/app:/app tensorflow/tensorflow:1.14.0-gpu-py3 bash
+
 
 
 # py in Docker

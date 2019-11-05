@@ -15,6 +15,7 @@ from datetime import datetime
 # device_name = "gpu"
 # device_name = "cpu"
 # shape = (10000, 10000)
+# shape = (20000, 20000)
 
 device_name = sys.argv[1]  # Choose device from cmd line. Options: gpu or cpu
 shape = (int(sys.argv[2]), int(sys.argv[2]))
