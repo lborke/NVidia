@@ -56,6 +56,8 @@ Time taken: 0:00:43.553487
 # GeForce RTX 2060 Super Mini
 python tf_benchmark_simple.py gpu 30000
 Time taken: 0:00:12.170086
+Time taken: 0:00:13.211316
+Time taken: 0:00:11.733532
 
 # paperspace P4000
 python tf_benchmark_simple.py gpu 30000

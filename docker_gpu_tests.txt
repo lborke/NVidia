@@ -16,6 +16,9 @@ sudo docker run --gpus all -it tensorflow/tensorflow:latest-gpu-py3 bash
 # tensorflow:1.14.0
 sudo docker run --gpus all -it tensorflow/tensorflow:1.14.0-gpu-py3 bash
 
+[nur CPU]
+sudo docker run --rm -it tensorflow/tensorflow:1.14.0-py3 bash
+
 
 # data
 sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:latest-gpu bash
@@ -23,7 +26,10 @@ sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull
 
 sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:latest-gpu-py3 bash
 
-sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:1.14.0-gpu-py3 bash
+sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull:/data tensorflow/tensorflow:1.14.0-gpu-py3 bash
+
+[nur CPU]
+sudo docker run --rm -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull/:/data/ tensorflow/tensorflow:1.14.0-py3 bash
 
 
 # benchmarks
