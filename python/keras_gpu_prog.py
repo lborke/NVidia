@@ -49,15 +49,16 @@ train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input) #inclu
 
 # training_data_path = '/data'
 
-# paperspace P4000
+# paperspace P4000/P5000
 # training_data_path = '/data/BigSetFull'
-training_data_path = '/data/small'
+# training_data_path = '/data/small'
+training_data_path = '/data/medium'
 
 
 train_generator=train_datagen.flow_from_directory(training_data_path,
 	target_size=(224,224),
 	color_mode='rgb',
-	batch_size=32,
+	batch_size=64,
 	class_mode='categorical',
 	shuffle=True)
 
