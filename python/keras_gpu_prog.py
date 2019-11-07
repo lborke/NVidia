@@ -72,7 +72,8 @@ model.fit_generator(generator=train_generator,
 	steps_per_epoch=step_size_train,
 	# use_multiprocessing=True,
 	# workers = 8,
-	epochs = 10)
+	# epochs = 10)
+	epochs = 20)
 	# epochs = 30)
 	# epochs = 100)
 
