@@ -18,6 +18,10 @@ sudo apt-get install nvidia-driver-430
 
 sudo reboot
 
+# tests
+sudo apt-get install nvidia-driver-440
+
+
 
 ?: sudo apt-mark hold nvidia-driver-390
 
@@ -33,5 +37,9 @@ sudo reboot
 
 ## Links
 
+GeForce RTX 2060 Super Mini
+
 https://forums.xilinx.com/t5/Machine-Learning/decent-dnnc-for-cuda-9-2-10-0/td-p/938108
 
+!!!
+https://github.com/tensorflow/tensorflow/issues/24496

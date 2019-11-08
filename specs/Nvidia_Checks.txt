@@ -1,6 +1,19 @@
 
 >>> GeForce RTX 2060 Super Mini
 
+# nvidia-driver-440
+
+Fri Nov  8 21:40:05 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 440.26       Driver Version: 440.26       CUDA Version: 10.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce RTX 206...  Off  | 00000000:26:00.0  On |                  N/A |
+| 38%   41C    P8    19W / 175W |    511MiB /  7979MiB |      2%      Default |
++-------------------------------+----------------------+----------------------+
+
 
 nvidia-smi
 
@@ -12,6 +25,7 @@ gcc --version
 
 nvcc --version
 
+# nvidia-driver-430
 
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 430.50       Driver Version: 430.50       CUDA Version: 10.1     |
