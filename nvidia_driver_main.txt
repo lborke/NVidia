@@ -29,3 +29,9 @@ sudo apt-get remove --purge nvidia*
 sudo apt-get autoremove
 sudo reboot
 
+
+
+## Links
+
+https://forums.xilinx.com/t5/Machine-Learning/decent-dnnc-for-cuda-9-2-10-0/td-p/938108
+

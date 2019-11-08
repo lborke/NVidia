@@ -39,6 +39,11 @@ sudo docker run --gpus all --rm -it -v /home/lukas/benchmark:/app tensorflow/ten
 sudo docker run --gpus all --rm -it -v ~/app:/app tensorflow/tensorflow:1.14.0-gpu-py3 bash
 
 
+# restart
+
+sudo docker start -ai ad35225e4bf0
+
+
 
 # py in Docker
 pip install pillow
