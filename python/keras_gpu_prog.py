@@ -2,13 +2,14 @@
 # https://www.tensorflow.org/guide/gpu#allowing_gpu_memory_growth
 
 # >>> läuft!
-
-import tensorflow as tf
-
+# 2060 Su
 gpus = tf.config.experimental.list_physical_devices('GPU')
 
 tf.config.experimental.set_memory_growth(gpus[0], True)
 
+#
+
+import tensorflow as tf
 
 import os
 
@@ -57,8 +58,8 @@ train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input) #inclu
 # training_data_path = '/data'
 
 # paperspace P4000/P5000
-training_data_path = '/data/BigSetFull'
-# training_data_path = '/data/small'
+# training_data_path = '/data/BigSetFull'
+training_data_path = '/data/small'
 # training_data_path = '/data/medium'
 
 
@@ -80,8 +81,8 @@ model.fit_generator(generator=train_generator,
 	# use_multiprocessing=True,
 	# workers = 8,
 	# epochs = 10)
-	epochs = 2)
-	# epochs = 30)
+	# epochs = 2)
+	epochs = 30)
 	# epochs = 100)
 
 
