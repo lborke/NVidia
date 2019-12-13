@@ -1,27 +1,33 @@
 
 # https://www.tensorflow.org/guide/gpu#allowing_gpu_memory_growth
 
+# -v /media/lukas/TeraTest/temp_data/alltours:/data
+sudo docker start -ai fc0697014ad5
+
 # >>> läuft!
+
+import tensorflow as tf
+
 # 2060 Su
 gpus = tf.config.experimental.list_physical_devices('GPU')
 
 tf.config.experimental.set_memory_growth(gpus[0], True)
+# END  2060 Su
 
-#
+# [opt] disable warnings
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 
-import tensorflow as tf
 
-import os
+# import os
+# from PIL import Image
+# import numpy as np
 
-from PIL import Image
 
-import numpy as np
-
-from tensorflow.keras.layers import Dense,GlobalAveragePooling2D
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 from tensorflow.keras.applications import MobileNet
 from tensorflow.keras.applications.mobilenet import preprocess_input
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import Model, model_from_yaml
+from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
 
 
@@ -42,11 +48,11 @@ model.summary()
 
 
 for layer in model.layers[:87]:
-	layer.trainable=False
+    layer.trainable=False
 
 
 for layer in model.layers[87:]:
-	layer.trainable=True
+    layer.trainable=True
 
 
 train_datagen=ImageDataGenerator(preprocessing_function=preprocess_input) #included in our dependencies
@@ -66,11 +72,11 @@ training_data_path = '/data/train'
 
 
 train_generator=train_datagen.flow_from_directory(training_data_path,
-	target_size=(224,224),
-	color_mode='rgb',
-	batch_size=64,
-	class_mode='categorical',
-	shuffle=True)
+                                                 target_size=(224,224),
+                                                 color_mode='rgb',
+                                                 batch_size=32,
+                                                 class_mode='categorical',
+                                                 shuffle=True)
 
 
 model.compile(optimizer='Adam',loss='categorical_crossentropy',metrics=['accuracy'])
@@ -80,14 +86,13 @@ step_size_train
 
 
 model.fit_generator(generator=train_generator,
-	steps_per_epoch=step_size_train,
-	# use_multiprocessing=True,
-	# workers = 8,
-	# epochs = 10)
-	epochs = 2)
-	# epochs = 30)
-	# epochs = 100)
-
+                   steps_per_epoch=step_size_train,
+                   # use_multiprocessing=True,
+                   # workers = 8,
+                   # epochs = 10)
+                   epochs = 2)
+                   # epochs = 30)
+                   # epochs = 100)
 
 
 
@@ -133,47 +138,4 @@ results=pd.DataFrame({"Filename":filenames,
 
 # save to csv
 results.to_csv("results.csv",index=False)
-
-
-
-# https://www.tensorflow.org/guide/keras/save_and_serialize
-# You can save a model built with the Functional API into a single file. You can later recreate the same model from this file,
-# even if you no longer have access to the code that created the model.
-
-# model.save('path_to_my_model.h5')
-
-
-
-## Save
-# serialize model to JSON
-model_json = model.to_json()
-with open("model.json", "w") as json_file:
-    json_file.write(model_json)
-
-
-# serialize model to YAML
-model_yaml = model.to_yaml()
-with open('model.yaml', 'w') as yaml_file:
-    yaml_file.write(model_yaml)
-
-
-# serialize weights to HDF5
-model.save_weights("model.h5")
-# print("Saved model to disk")
-
-
-
-## Load
-# Load YAML and create model
-with open('model.yaml', 'r') as yaml_file: loaded_model_yaml = yaml_file.read()
-
-model = model_from_yaml(loaded_model_yaml)
-# load weights into new model
-model.load_weights('model.h5')
-
-# Print a summary representation of your model
-model.summary()
-
-
-
 
