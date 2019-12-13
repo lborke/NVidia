@@ -26,8 +26,11 @@ sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull
 # tensorflow:latest-gpu-py3
 sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours:/data tensorflow/tensorflow:latest-gpu-py3 bash
 
-
 sudo docker run --gpus all -it -v /media/lukas/TeraTest/temp/alltours/BigSetFull:/data tensorflow/tensorflow:1.14.0-gpu-py3 bash
+
+sudo docker run --gpus all -it \
+  -v /media/lukas/TeraTest/temp_data/alltours:/data \
+  tensorflow/tensorflow:latest-gpu-py3 bash
 
 
 [nur CPU]
@@ -49,6 +52,9 @@ sudo docker start -ai ad35225e4bf0
 # tensorflow:latest-gpu-py3
 sudo docker start -ai d5dd3c33df3d
 
+# -v /media/lukas/TeraTest/temp_data/alltours:/data
+sudo docker start -ai fc0697014ad5
+
 
 
 # py in Docker
@@ -65,4 +71,19 @@ https://medium.com/@RouYunPan/how-to-use-tensorflow-gpu-with-docker-2b72f784fdf3
 # common commands
 sudo docker ps -as
 
+
+## templates
+
+# tensorflow:1.14.0-gpu-py3
+sudo docker run --gpus all -it \
+  -v ~/app:/app \
+  -v ~/data:/data \
+  tensorflow/tensorflow:1.14.0-gpu-py3 bash
+
+
+# tensorflow:latest-gpu-py3
+sudo docker run --gpus all -it \
+  -v ~/app:/app \
+  -v ~/data:/data \
+  tensorflow/tensorflow:latest-gpu-py3 bash
 
